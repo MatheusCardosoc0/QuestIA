@@ -10,7 +10,7 @@ namespace QuestIA.Core.Models
         public DateTime ExpiresAt { get; set; }
         public bool IsRevoked { get; set; }
         public DateTime CreatedAt { get; set; }
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
         
         [JsonIgnore]
         [ForeignKey(nameof(UserId))]

@@ -11,7 +11,7 @@ namespace QuestIA.Core.Models
         public Guid SubjectId {  get; set; }
         [JsonIgnore]
         public Subject Subject { get; set; }
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
         [JsonIgnore]
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }

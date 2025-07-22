@@ -93,7 +93,7 @@ namespace QuestIA.App.Service
                 throw new UnauthorizedAccessException("Token de atualização inválido");
             }
 
-            var user = await _userService.GetByIdAsync(userId);
+            var user = await _userService.GetByIdAsync(userId, userId);
             
             // Revoga o refresh token atual
             refreshToken.IsRevoked = true;
@@ -158,7 +158,7 @@ namespace QuestIA.App.Service
             var principal = GetPrincipalFromExpiredToken(token);
             var userId = Guid.Parse(principal.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             
-            return MapToUserDto(await _userService.GetByIdAsync(userId));
+            return MapToUserDto(await _userService.GetByIdAsync(userId, userId));
         }
 
         private string GenerateJwtToken(User user)
@@ -246,7 +246,7 @@ namespace QuestIA.App.Service
                 {
                     foreach (var token in expiredTokens)
                     {
-                        await _unitOfWork.RefreshToken.DeleteAsync(token.Id);
+                        await _unitOfWork.RefreshToken.DeleteAsync(token.Id, userId);
                     }
                     await _unitOfWork.SaveChangesAsync();
                     await _unitOfWork.CommitTransactionAsync();
@@ -316,7 +316,7 @@ namespace QuestIA.App.Service
             {
                 Id = null,
                 Name = user.Name,
-                Email = user.Email,
+                Email = null,
                 CreatedAt = user.CreatedAt,
                 UpdatedAt = user.UpdatedAt
             };

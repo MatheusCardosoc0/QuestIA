@@ -394,7 +394,7 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.SubjectController",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Subject, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.SubjectDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "GetAllAsync",
     "RelativePath": "api/Subject",
     "HttpMethod": "GET",

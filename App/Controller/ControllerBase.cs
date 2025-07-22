@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using QuestIA.App.Extensions;
 using QuestIA.Core.Models;
 using QuestIA.Core.Service;
 
@@ -33,13 +34,15 @@ namespace QuestIA.App.Controller
         {
             try
             {
-                var entities = await _service.GetAllAsync();
+                var userId = this.GetUserId();
+
+                var entities = await _service.GetAllAsync(userId);
                 var dtos = entities.Select(e => ToDto(e));
                 return Ok(dtos);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+                return StatusCode(500, $"Erro interno do servidor: {ex.ToString()}");
             }
         }
 
@@ -48,7 +51,9 @@ namespace QuestIA.App.Controller
         {
             try
             {
-                var entity = await _service.GetByIdAsync(id);
+                var userId = this.GetUserId();
+
+                var entity = await _service.GetByIdAsync(id, userId);
                 if (entity == null)
                 {
                     return NotFound();
@@ -57,7 +62,7 @@ namespace QuestIA.App.Controller
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+                return StatusCode(500, $"Erro interno do servidor: {ex.ToString()}");
             }
         }
 
@@ -71,15 +76,21 @@ namespace QuestIA.App.Controller
                     return BadRequest("DTO não pode ser nulo");
                 }
 
+                var userId = this.GetUserId();
+
                 var entity = ToDomain(dto);
+
+                entity.UserId = userId;
+
                 var createdEntity = await _service.CreateAsync(entity);
                 var createdDto = ToDto(createdEntity);
-                
-                return CreatedAtAction(nameof(GetByIdAsync), new { id = GetEntityId(createdEntity) }, createdDto);
+
+                return Ok(dto);
+
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+                return StatusCode(500, $"Erro interno do servidor: {ex.ToString()}");
             }
         }
 
@@ -93,19 +104,21 @@ namespace QuestIA.App.Controller
                     return BadRequest("DTO não pode ser nulo");
                 }
 
-                var existingEntity = await _service.GetByIdAsync(id);
+                var userId = this.GetUserId();
+
+                var existingEntity = await _service.GetByIdAsync(id, userId);
                 if (existingEntity == null)
                 {
                     return NotFound();
                 }
 
                 existingEntity.Id = id;
-                var updatedEntity = await _service.UpdateAsync(existingEntity);
+                var updatedEntity = await _service.UpdateAsync(existingEntity, userId);
                 return Ok(ToDto(updatedEntity));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+                return StatusCode(500, $"Erro interno do servidor: {ex.ToString()}");
             }
         }
 
@@ -114,12 +127,14 @@ namespace QuestIA.App.Controller
         {
             try
             {
-                await _service.DeleteAsync(id);
+                var userId = this.GetUserId();
+
+                await _service.DeleteAsync(id, userId);
                 return NoContent();
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+                return StatusCode(500, $"Erro interno do servidor: {ex.ToString()}");
             }
         }
 
@@ -131,4 +146,4 @@ namespace QuestIA.App.Controller
             return idProperty?.GetValue(entity);
         }
     }
-} 
+}

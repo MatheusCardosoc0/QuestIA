@@ -16,11 +16,9 @@ namespace QuestIA.App.Service
 
         public async Task<IEnumerable<Subject>> GetByUserIdAsync(Guid userId)
         {
-            // Usando expressão LINQ diretamente
             return await _unitOfWork.Subjects.WhereAsync(s => s.UserId == userId);
         }
 
-        // Exemplos de métodos usando as novas capacidades LINQ
         public async Task<IEnumerable<Subject>> GetSubjectsByScoreRangeAsync(int minScore, int maxScore)
         {
             return await _unitOfWork.Subjects.WhereAsync(s => 

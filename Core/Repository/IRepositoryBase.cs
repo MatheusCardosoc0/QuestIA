@@ -5,11 +5,11 @@ namespace QuestIA.Core.Repository
 {
     public interface IRepositoryBase<T, Tkey> where T : class, IEntity<Tkey>
     {
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync(Tkey id);                   
+        Task<IEnumerable<T>> GetAllAsync(Guid userId);
+        Task<T> GetByIdAsync(Tkey id, Guid userId);                   
         Task<T> CreateAsync(T entity);
         Task<T> UpdateAsync(T entity);
-        Task DeleteAsync(Tkey id);
+        Task DeleteAsync(Tkey id, Guid userId);
         Task<bool> ExistsAsync(Tkey id);
 
         // Métodos com expressões LINQ

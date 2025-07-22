@@ -1101,6 +1101,14 @@
   },
   "components": {
     "schemas": {
+      "DifficultyLevel": {
+        "enum": [
+          "Easy",
+          "Hard",
+          "Medium"
+        ],
+        "type": "string"
+      },
       "LoginRequestDTO": {
         "type": "object",
         "properties": {
@@ -1201,6 +1209,14 @@
         },
         "additionalProperties": false
       },
+      "QuestTypes": {
+        "enum": [
+          "Objective",
+          "Subjective",
+          "Alternate"
+        ],
+        "type": "string"
+      },
       "RefreshTokenRequestDTO": {
         "type": "object",
         "properties": {
@@ -1254,6 +1270,16 @@
             "nullable": true
           },
           "score": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "timeLimit": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timesTaken": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1261,6 +1287,31 @@
           "quantityQuests": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "autoSubmitOnTimeout": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "difficultyLevel": {
+            "$ref": "#/components/schemas/DifficultyLevel"
+          },
+          "isPublic": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isRandom": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "questType": {
+            "$ref": "#/components/schemas/QuestTypes"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
           },
           "userId": {

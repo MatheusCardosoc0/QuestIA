@@ -15,14 +15,14 @@ namespace QuestIA.App.Service
             _repository = repository;
         }
 
-        public virtual async Task<IEnumerable<T>> GetAllAsync()
+        public virtual async Task<IEnumerable<T>> GetAllAsync(Guid userId)
         {
-            return await _repository.GetAllAsync();
+            return await _repository.GetAllAsync(userId);
         }
 
-        public virtual async Task<T> GetByIdAsync(TKey id)
+        public virtual async Task<T> GetByIdAsync(TKey id, Guid userId)
         {
-            return await _repository.GetByIdAsync(id);
+            return await _repository.GetByIdAsync(id, userId);
         }
 
         public virtual async Task<T> CreateAsync(T entity)
@@ -42,10 +42,14 @@ namespace QuestIA.App.Service
             }
         }
 
-        public virtual async Task<T> UpdateAsync(T entity)
+        public virtual async Task<T> UpdateAsync(T entity, Guid userId)
         {
             try
             {
+                if(entity.UserId != userId)
+                {
+                    throw new Exception("Id de usuário não compativel para alteração");
+                }
                 await _unitOfWork.BeginTransactionAsync();
                 var updatedEntity = await _repository.UpdateAsync(entity);
                 await _unitOfWork.SaveChangesAsync();
@@ -59,12 +63,12 @@ namespace QuestIA.App.Service
             }
         }
 
-        public virtual async Task DeleteAsync(TKey id)
+        public virtual async Task DeleteAsync(TKey id, Guid userId)
         {
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                await _repository.DeleteAsync(id);
+                await _repository.DeleteAsync(id, userId);
                 await _unitOfWork.SaveChangesAsync();
                 await _unitOfWork.CommitTransactionAsync();
             }

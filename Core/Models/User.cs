@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace QuestIA.Core.Models
@@ -21,5 +22,8 @@ namespace QuestIA.Core.Models
         public RefreshToken? RefreshToken { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+
+        [NotMapped]
+        public Guid? UserId { get; set; }
     }
 }

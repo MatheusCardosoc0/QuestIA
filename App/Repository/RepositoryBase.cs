@@ -17,14 +17,18 @@ namespace QuestIA.App.Repository
             _dbSet = context.Set<T>();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllAsync(Guid userId)
         {
-            return await _dbSet.ToListAsync();
+            return await _dbSet.Where(c => c.UserId == userId).ToListAsync();
         }
 
-        public async Task<T> GetByIdAsync(TKey id)
+        public async Task<T> GetByIdAsync(TKey id, Guid userId)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbSet
+              .FirstOrDefaultAsync(c =>
+                 c.UserId == userId
+                 && EqualityComparer<TKey>.Default.Equals(c.Id, id)
+              );
         }
 
         public async Task<T> CreateAsync(T entity)
@@ -39,9 +43,9 @@ namespace QuestIA.App.Repository
             return entity;
         }
 
-        public async Task DeleteAsync(TKey id)
+        public async Task DeleteAsync(TKey id, Guid userId)
         {
-            var entity = await GetByIdAsync(id);
+            var entity = await GetByIdAsync(id, userId);
             if (entity != null)
             {
                 _dbSet.Remove(entity);

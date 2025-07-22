@@ -26,12 +26,19 @@ namespace QuestIA.App.Controller
                 Name = dto.Name,
                 Description = dto.Description,
                 Score = dto.Score,
+                TimeLimit = dto.TimeLimit,
+                TimesTaken = dto.TimesTaken,
                 QuantityQuests = dto.QuantityQuests,
+                AutoSubmitOnTimeout = dto.AutoSubmitOnTimeout,
+                DifficultyLevel = dto.DifficultyLevel,
+                IsPublic = dto.IsPublic,
+                IsRandom = dto.IsRandom,
+                QuestType = dto.QuestType,
+                Tags = dto.Tags ?? new List<string>(),
                 UserId = dto.UserId ?? Guid.Empty
             };
         }
 
-        // Implementação do mapeamento Domain -> DTO
         protected override SubjectDTO ToDto(Subject entity)
         {
             return new SubjectDTO
@@ -40,27 +47,35 @@ namespace QuestIA.App.Controller
                 Name = entity.Name,
                 Description = entity.Description,
                 Score = entity.Score,
+                TimeLimit = entity.TimeLimit,
+                TimesTaken = entity.TimesTaken,
                 QuantityQuests = entity.QuantityQuests,
+                AutoSubmitOnTimeout = entity.AutoSubmitOnTimeout,
+                DifficultyLevel = entity.DifficultyLevel,
+                IsPublic = entity.IsPublic,
+                IsRandom = entity.IsRandom,
+                QuestType = entity.QuestType,
+                Tags = entity.Tags,
                 UserId = entity.UserId
             };
         }
 
-        [Authorize]
-        [HttpGet]
-        public override async Task<ActionResult<IEnumerable<SubjectDTO>>> GetAllAsync()
-        {
-            try
-            {
-                var userId = this.GetUserId();
-                var subjects = await _subjectService.GetByUserIdAsync(userId);
-                var subjectDtos = subjects.Select(s => ToDto(s));
-                return Ok(subjectDtos);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
-            }
-        }
+        //[Authorize]
+        //[HttpGet]
+        //public override async Task<ActionResult<IEnumerable<SubjectDTO>>> GetAllAsync()
+        //{
+        //    try
+        //    {
+        //        var userId = this.GetUserId();
+        //        var subjects = await _subjectService.GetByUserIdAsync(userId);
+        //        var subjectDtos = subjects.Select(s => ToDto(s));
+        //        return Ok(subjectDtos);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
+        //    }
+        //}
 
         protected override object GetEntityId(Subject entity)
         {

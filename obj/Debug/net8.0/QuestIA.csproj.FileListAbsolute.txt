@@ -115,4 +115,5 @@ C:\Projects\QuestIA\QuestIA\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspace
 C:\Projects\QuestIA\QuestIA\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\QuestIA\QuestIA\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\QuestIA\QuestIA\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Projects\QuestIA\QuestIA\obj\Debug\net8.0\QuestIA.sourcelink.json
 C:\Projects\QuestIA\QuestIA\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
