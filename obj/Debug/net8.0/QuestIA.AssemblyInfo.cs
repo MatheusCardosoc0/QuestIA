@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuestIA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc9ad97cbff209d7c42207aaa4db7ad105a1dab1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b37d81ca4913a259bf92dd3208bd1b364fdd98d")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuestIA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuestIA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

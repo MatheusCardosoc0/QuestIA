@@ -56,6 +56,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddHttpClient();
+
 // Configuração do Unit of Work
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 

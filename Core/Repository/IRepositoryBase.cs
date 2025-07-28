@@ -18,7 +18,9 @@ namespace QuestIA.Core.Repository
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
         Task<int> CountAsync(Expression<Func<T, bool>> predicate);
         Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> predicate);
-        
+
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);
+
         // Métodos síncronos para compatibilidade
         IQueryable<T> AsQueryable();
     }

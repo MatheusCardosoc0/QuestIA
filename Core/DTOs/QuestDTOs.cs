@@ -9,6 +9,6 @@ namespace QuestIA.Core.Models
         public string Response { get; set; }
         public Guid? SubjectId {  get; set; }
         public Guid? UserId { get; set; }
-        public OptionDto[] Options { get; set; }
+        public List<OptionDto> Options { get; set; }
     }
 }

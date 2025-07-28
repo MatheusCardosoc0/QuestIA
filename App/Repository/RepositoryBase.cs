@@ -57,7 +57,6 @@ namespace QuestIA.App.Repository
             return await _dbSet.FindAsync(id) != null;
         }
 
-        // Implementação dos métodos com expressões LINQ
         public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
         {
             return await _dbSet.FirstOrDefaultAsync(predicate);
@@ -83,6 +82,12 @@ namespace QuestIA.App.Repository
             return await _dbSet.SingleOrDefaultAsync(predicate);
         }
 
+        public async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> items)
+        {
+            await _dbSet.AddRangeAsync(items);
+            return items;
+        }
+ 
         public IQueryable<T> AsQueryable()
         {
             return _dbSet.AsQueryable();

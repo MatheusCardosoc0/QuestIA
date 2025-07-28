@@ -6,5 +6,7 @@ namespace QuestIA.Core.Service
     {
         Task<IEnumerable<Quest>> GetBySubjectIdAsync(Guid subjectId);
         Task<IEnumerable<Quest>> GetByUserIdAsync(Guid userId);
+
+        Task<IEnumerable<Quest>> GenerateQuestsBySubject(Guid userId, Guid subjectId);
     }
 } 
