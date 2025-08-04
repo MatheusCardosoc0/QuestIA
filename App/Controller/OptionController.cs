@@ -48,7 +48,7 @@ namespace QuestIA.App.Controller
 
         [Authorize]
         [HttpGet("quest/{questId}")]
-        public async Task<ActionResult<IEnumerable<QuestDto>>> GetAllAsync(int questId)
+        public async Task<ActionResult<IEnumerable<QuestionDto>>> GetAllAsync(int questId)
         {
             try
             {

@@ -238,7 +238,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuestIA.Core.Models.QuestDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuestIA.Core.Models.QuestionDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -249,16 +249,16 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quest, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Question, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestionDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "GetAllAsync",
-    "RelativePath": "api/Quest",
+    "RelativePath": "api/Question",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuestIA.Core.Models.QuestDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuestIA.Core.Models.QuestionDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -269,22 +269,22 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quest, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Question, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestionDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "CreateAsync",
-    "RelativePath": "api/Quest",
+    "RelativePath": "api/Question",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "QuestIA.Core.Models.QuestDto",
+        "Type": "QuestIA.Core.Models.QuestionDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "QuestIA.Core.Models.QuestDto",
+        "Type": "QuestIA.Core.Models.QuestionDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -295,9 +295,9 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quest, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Question, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestionDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "GetByIdAsync",
-    "RelativePath": "api/Quest/{id}",
+    "RelativePath": "api/Question/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -310,7 +310,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "QuestIA.Core.Models.QuestDto",
+        "Type": "QuestIA.Core.Models.QuestionDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -321,9 +321,9 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quest, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Question, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestionDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "UpdateAsync",
-    "RelativePath": "api/Quest/{id}",
+    "RelativePath": "api/Question/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -335,13 +335,13 @@
       },
       {
         "Name": "dto",
-        "Type": "QuestIA.Core.Models.QuestDto",
+        "Type": "QuestIA.Core.Models.QuestionDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "QuestIA.Core.Models.QuestDto",
+        "Type": "QuestIA.Core.Models.QuestionDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -352,9 +352,9 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quest, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Question, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuestionDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "DeleteAsync",
-    "RelativePath": "api/Quest/{id}",
+    "RelativePath": "api/Question/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -368,22 +368,22 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "QuestIA.App.Controller.QuestController",
-    "Method": "GetAllAsync",
-    "RelativePath": "api/Quest/subject/{subjectId}",
-    "HttpMethod": "GET",
+    "ContainingType": "QuestIA.App.Controller.QuestionController",
+    "Method": "GenerateQuestionsByQuiz",
+    "RelativePath": "api/Question/generate-by-quiz/{quizId}",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "subjectId",
+        "Name": "quizId",
         "Type": "System.Guid",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuestIA.Core.Models.QuestDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "QuestIA.Core.Models.QuestionDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -394,16 +394,42 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Subject, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.SubjectDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.QuestionController",
     "Method": "GetAllAsync",
-    "RelativePath": "api/Subject",
+    "RelativePath": "api/Question/quiz/{quizId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "quizId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuestIA.Core.Models.QuestionDto, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quiz, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuizDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Quiz",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuestIA.Core.Models.SubjectDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuestIA.Core.Models.QuizDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -414,22 +440,22 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Subject, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.SubjectDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quiz, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuizDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "CreateAsync",
-    "RelativePath": "api/Subject",
+    "RelativePath": "api/Quiz",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "QuestIA.Core.Models.SubjectDTO",
+        "Type": "QuestIA.Core.Models.QuizDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "QuestIA.Core.Models.SubjectDTO",
+        "Type": "QuestIA.Core.Models.QuizDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -440,9 +466,9 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Subject, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.SubjectDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quiz, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuizDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "GetByIdAsync",
-    "RelativePath": "api/Subject/{id}",
+    "RelativePath": "api/Quiz/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -455,7 +481,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "QuestIA.Core.Models.SubjectDTO",
+        "Type": "QuestIA.Core.Models.QuizDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -466,9 +492,9 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Subject, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.SubjectDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quiz, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuizDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "UpdateAsync",
-    "RelativePath": "api/Subject/{id}",
+    "RelativePath": "api/Quiz/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -480,13 +506,13 @@
       },
       {
         "Name": "dto",
-        "Type": "QuestIA.Core.Models.SubjectDTO",
+        "Type": "QuestIA.Core.Models.QuizDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "QuestIA.Core.Models.SubjectDTO",
+        "Type": "QuestIA.Core.Models.QuizDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -497,9 +523,9 @@
     ]
   },
   {
-    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Subject, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.SubjectDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+    "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.Quiz, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.QuizDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "DeleteAsync",
-    "RelativePath": "api/Subject/{id}",
+    "RelativePath": "api/Quiz/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

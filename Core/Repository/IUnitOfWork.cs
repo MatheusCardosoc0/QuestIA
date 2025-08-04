@@ -8,8 +8,8 @@ namespace QuestIA.Core.Repository
     {
         IUserRepository    Users { get; }
         IRefreshTokenRepository RefreshToken { get; }
-        ISubjectRepository Subjects { get; }
-        IQuestRepository   Quests { get; }
+        IQuizRepository Quizzes { get; }
+        IQuestionRepository   Questions { get; }
         IOptionRepository  Options { get; }
 
         Task<int>   SaveChangesAsync();

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuestIA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b06a3a691f2ed1bf6adcff39ef9b10b7127b2585")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1de0969651fa066aabb092d72ff272a48f5b29a")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuestIA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuestIA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

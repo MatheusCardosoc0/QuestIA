@@ -10,8 +10,8 @@ namespace QuestIA.Infra.Database
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Subject> Subjects { get; set; }
-        public DbSet<Quest> Quests { get; set; }
+        public DbSet<Quiz> Quizzes { get; set; }
+        public DbSet<Question> Questions { get; set; }
         public DbSet<Option> Options { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

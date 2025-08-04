@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace QuestIA.Core.Models
 {
-    public enum QuestTypes
+    public enum QuestionTypes
     {
         Objective, Subjective, Alternate
     }
@@ -11,7 +11,7 @@ namespace QuestIA.Core.Models
     {
         Easy, Hard, Medium
     }
-    public class Subject : IEntity<Guid>
+    public class Quiz : IEntity<Guid>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -19,18 +19,21 @@ namespace QuestIA.Core.Models
         public double? Score { get; set; }
         public int? TimeLimit { get; set; }
         public int? TimesTaken { get; set; }
-        public int? QuantityQuests { get; set; }
+        public int? QuantityQuestions { get; set; }
         public bool? AutoSubmitOnTimeout { get; set; }
-        public DifficultyLevel? DifficultyLevel { get; set; }
+        public DifficultyLevel DifficultyLevel { get; set; }
+        public string? TimeSpent {  get; set; }
         public bool? IsPublic { get; set; }
         public bool? IsRandom { get; set; }
-        public QuestTypes? QuestType { get; set; }
+        public QuestionTypes? QuestionType { get; set; }
         public List<string>? Tags { get; set; }
         public Guid? UserId { get; set; }
         [JsonIgnore]
-        public List<Quest>? Questions { get; set; }
+        public List<Question>? Questions { get; set; }
         [JsonIgnore]
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }
+        public DateTime? Created { get; set; }
+        public DateTime? LastAttempt { get; set; }
     }
 }

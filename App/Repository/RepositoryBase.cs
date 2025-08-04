@@ -27,7 +27,7 @@ namespace QuestIA.App.Repository
             return await _dbSet
               .FirstOrDefaultAsync(c =>
                  c.UserId == userId
-                 && EqualityComparer<TKey>.Default.Equals(c.Id, id)
+                 && c.Id.Equals(id)
               );
         }
 

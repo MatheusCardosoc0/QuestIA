@@ -13,11 +13,11 @@ namespace QuestIA.Core.Models
         public string Password { get; set; }
         public string? RedefinePasswordCode { get; set; }
         [JsonIgnore]
-        public List<Subject>? Subjects { get; set; }
+        public List<Quiz>? Subjects { get; set; }
         [JsonIgnore]
         public List<Option>? Options { get; set; }
         [JsonIgnore]
-        public List<Quest>? Quests { get; set; }
+        public List<Question>? Quests { get; set; }
         [JsonIgnore]
         public RefreshToken? RefreshToken { get; set; }
         public DateTime CreatedAt { get; set; }

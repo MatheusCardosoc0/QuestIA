@@ -8,19 +8,19 @@ using QuestIA.Core.Service;
 namespace QuestIA.App.Controller
 {
     [Route("api/[controller]")]
-    public class SubjectController : ControllerBase<Subject, SubjectDTO, Guid>
+    public class QuizController : ControllerBase<Quiz, QuizDTO, Guid>
     {
-        private readonly ISubjectService _subjectService;
+        private readonly IQuizService _subjectService;
 
-        public SubjectController(ISubjectService subjectService) : base(subjectService)
+        public QuizController(IQuizService subjectService) : base(subjectService)
         {
             _subjectService = subjectService;
         }
 
         // Implementação do mapeamento DTO -> Domain
-        protected override Subject ToDomain(SubjectDTO dto)
+        protected override Quiz ToDomain(QuizDTO dto)
         {
-            return new Subject
+            return new Quiz
             {
                 Id = dto.Id ?? Guid.NewGuid(),
                 Name = dto.Name,
@@ -28,20 +28,20 @@ namespace QuestIA.App.Controller
                 Score = dto.Score,
                 TimeLimit = dto.TimeLimit,
                 TimesTaken = dto.TimesTaken,
-                QuantityQuests = dto.QuantityQuests,
+                QuantityQuestions = dto.QuantityQuestions,
                 AutoSubmitOnTimeout = dto.AutoSubmitOnTimeout,
                 DifficultyLevel = dto.DifficultyLevel,
                 IsPublic = dto.IsPublic,
                 IsRandom = dto.IsRandom,
-                QuestType = dto.QuestType,
+                QuestionType = dto.QuestionTypes,
                 Tags = dto.Tags ?? new List<string>(),
                 UserId = dto.UserId ?? Guid.Empty
             };
         }
 
-        protected override SubjectDTO ToDto(Subject entity)
+        protected override QuizDTO ToDto(Quiz entity)
         {
-            return new SubjectDTO
+            return new QuizDTO
             {
                 Id = entity.Id,
                 Name = entity.Name,
@@ -49,35 +49,18 @@ namespace QuestIA.App.Controller
                 Score = entity.Score,
                 TimeLimit = entity.TimeLimit,
                 TimesTaken = entity.TimesTaken,
-                QuantityQuests = entity.QuantityQuests,
+                QuantityQuestions = entity.QuantityQuestions,
                 AutoSubmitOnTimeout = entity.AutoSubmitOnTimeout,
                 DifficultyLevel = entity.DifficultyLevel,
                 IsPublic = entity.IsPublic,
                 IsRandom = entity.IsRandom,
-                QuestType = entity.QuestType,
+                QuestionTypes = entity.QuestionType,
                 Tags = entity.Tags,
                 UserId = entity.UserId
             };
         }
 
-        //[Authorize]
-        //[HttpGet]
-        //public override async Task<ActionResult<IEnumerable<SubjectDTO>>> GetAllAsync()
-        //{
-        //    try
-        //    {
-        //        var userId = this.GetUserId();
-        //        var subjects = await _subjectService.GetByUserIdAsync(userId);
-        //        var subjectDtos = subjects.Select(s => ToDto(s));
-        //        return Ok(subjectDtos);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, $"Erro interno do servidor: {ex.Message}");
-        //    }
-        //}
-
-        protected override object GetEntityId(Subject entity)
+        protected override object GetEntityId(Quiz entity)
         {
             return entity.Id;
         }

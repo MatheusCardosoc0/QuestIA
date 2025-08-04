@@ -37,6 +37,8 @@ namespace QuestIA.App.Repository
                 instance = new UserRepository(_context);
             else if (type == typeof(RefreshToken))
                 instance = new RefreshTokenRepository(_context);
+            else if (type == typeof(Quiz))                  // <-- adiciona este bloco
+                instance = new QuizRepository(_context);
             else
             {
                 // fallback para o genérico
@@ -51,8 +53,8 @@ namespace QuestIA.App.Repository
         // propriedades de acesso
         public IUserRepository Users => (IUserRepository)Repository<User, Guid>();
         public IRefreshTokenRepository RefreshToken => (IRefreshTokenRepository)Repository<RefreshToken, Guid>();
-        public ISubjectRepository Subjects => (ISubjectRepository)Repository<Subject, Guid>();
-        public IQuestRepository Quests => (IQuestRepository)Repository<Quest, int>();
+        public IQuizRepository Quizzes => (IQuizRepository)Repository<Quiz, Guid>();
+        public IQuestionRepository Questions => (IQuestionRepository)Repository<Question, int>();
         public IOptionRepository Options => (IOptionRepository)Repository<Option, int>();
 
         // transações

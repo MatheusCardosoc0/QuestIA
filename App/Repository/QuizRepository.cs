@@ -4,9 +4,9 @@ using QuestIA.Infra.Database;
 
 namespace QuestIA.App.Repository
 {
-    public class SubjectRepository : RepositoryBase<Subject, Guid>, ISubjectRepository
+    public class QuizRepository : RepositoryBase<Quiz, Guid>, IQuizRepository
     {
-        public SubjectRepository(QuestIAContext context) : base(context)
+        public QuizRepository(QuestIAContext context) : base(context)
         {
         }
 

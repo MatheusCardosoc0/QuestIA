@@ -10,7 +10,7 @@ namespace QuestIA.Core.Models
         public bool? IsCheck { get; set; }
         public int QuestId { get; set; }
         [JsonIgnore]
-        public Quest Quest { get; set; }
+        public Question Quest { get; set; }
         public Guid? UserId { get; set; }
         [JsonIgnore]
         [ForeignKey(nameof(UserId))]
