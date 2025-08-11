@@ -41,5 +41,24 @@ namespace QuestIA.App.Service
             return await _unitOfWork.Quizzes.WhereAsync(s => 
                 s.QuantityQuestions > questionCount);
         }
+
+        public async Task<Quiz> FinishQuiz(QuizDTO quizDto)
+        {
+            var quiz = await _unitOfWork.Quizzes.FirstOrDefaultAsync(c => c.Id == quizDto.Id);
+
+            if (quiz == null)
+            {
+                throw new Exception("Quiz não encontrado");
+            }
+
+            quiz.TimesTaken = quizDto.TimesTaken;
+            quiz.Score = quizDto.Score;
+            quiz.LastAttempt = DateTime.UtcNow;
+            quiz.TimeSpent = quizDto.TimeSpent;
+
+            await _quizRepository.UpdateAsync(quiz);
+
+            return quiz;
+        }
     }
 } 

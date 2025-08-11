@@ -33,7 +33,7 @@ namespace QuestIA.Core.Models
         [JsonIgnore]
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }
-        public DateTime? Created { get; set; }
+        public DateTime? Created { get; set; } = DateTime.UtcNow;
         public DateTime? LastAttempt { get; set; }
     }
 }

@@ -56,7 +56,12 @@ namespace QuestIA.App.Service
 
         public async Task<IEnumerable<Question>> GenerateQuestionsByQuiz(Guid userId, Guid quizId)
         {
-            //var quiz = await _quizRepository.GetByIdAsync(quizId, userId);
+            var verifyQuesstions = await _unitOfWork.Questions.AsQueryable().Include(c => c.Options).Where(c => c.QuizId == quizId).ToListAsync();
+
+            if(verifyQuesstions.Count() > 0)
+            {
+                return verifyQuesstions;
+            }
 
             var quiz = await _unitOfWork.Quizzes
                 .AsQueryable()
@@ -108,7 +113,6 @@ namespace QuestIA.App.Service
 
             var questions = rawDtos.Select(r =>
             {
-                // monta as opções
                 var opts = r.Options.Select(text => new Option
                 {
                     Description = text,

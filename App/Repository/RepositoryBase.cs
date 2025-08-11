@@ -40,6 +40,7 @@ namespace QuestIA.App.Repository
         public async Task<T> UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
+            await _context.SaveChangesAsync();
             return entity;
         }
 

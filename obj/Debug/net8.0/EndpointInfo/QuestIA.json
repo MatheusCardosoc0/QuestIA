@@ -734,6 +734,65 @@
         }
       }
     },
+    "/api/Quiz/finish/{id}": {
+      "put": {
+        "tags": [
+          "Quiz"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuizDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuizDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Quiz": {
       "get": {
         "tags": [
@@ -1322,6 +1381,10 @@
           },
           "autoSubmitOnTimeout": {
             "type": "boolean",
+            "nullable": true
+          },
+          "timeSpent": {
+            "type": "string",
             "nullable": true
           },
           "difficultyLevel": {

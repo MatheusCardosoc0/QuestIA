@@ -37,8 +37,10 @@ namespace QuestIA.App.Repository
                 instance = new UserRepository(_context);
             else if (type == typeof(RefreshToken))
                 instance = new RefreshTokenRepository(_context);
-            else if (type == typeof(Quiz))                  // <-- adiciona este bloco
+            else if (type == typeof(Quiz))                  
                 instance = new QuizRepository(_context);
+            else if (type == typeof(Question))
+                instance = new QuestionRepository(_context);
             else
             {
                 // fallback para o genérico

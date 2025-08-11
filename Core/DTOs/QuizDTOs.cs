@@ -14,6 +14,7 @@ namespace QuestIA.Core.Models
         public int? TimesTaken { get; set; }
         public int? QuantityQuestions { get; set; }
         public bool? AutoSubmitOnTimeout { get; set; }
+        public string? TimeSpent { get; set; }
         public DifficultyLevel DifficultyLevel { get; set; }
         public bool? IsPublic { get; set; }
         public bool? IsRandom { get; set; }

@@ -10,11 +10,11 @@ namespace QuestIA.App.Controller
     [Route("api/[controller]")]
     public class QuizController : ControllerBase<Quiz, QuizDTO, Guid>
     {
-        private readonly IQuizService _subjectService;
+        private readonly IQuizService _quizService;
 
-        public QuizController(IQuizService subjectService) : base(subjectService)
+        public QuizController(IQuizService quizService) : base(quizService)
         {
-            _subjectService = subjectService;
+            _quizService = quizService;
         }
 
         // Implementação do mapeamento DTO -> Domain
@@ -55,14 +55,27 @@ namespace QuestIA.App.Controller
                 IsPublic = entity.IsPublic,
                 IsRandom = entity.IsRandom,
                 QuestionTypes = entity.QuestionType,
+                TimeSpent = entity.TimeSpent,
                 Tags = entity.Tags,
                 UserId = entity.UserId
             };
         }
 
-        protected override object GetEntityId(Quiz entity)
+        [HttpPut("finish/{id}")]
+        public virtual async Task<ActionResult<QuizDTO>> FinishQuiz(Guid id, [FromBody] QuizDTO dto)
         {
-            return entity.Id;
+            try
+            {
+                dto.Id = id;
+                var updatedEntity = await _quizService.FinishQuiz(dto);
+                return Ok(ToDto(updatedEntity));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro interno do servidor: {ex.ToString()}");
+            }
         }
+
+   
     }
 } 

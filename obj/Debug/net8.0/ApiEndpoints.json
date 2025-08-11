@@ -539,6 +539,37 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "QuestIA.App.Controller.QuizController",
+    "Method": "FinishQuiz",
+    "RelativePath": "api/Quiz/finish/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "QuestIA.Core.Models.QuizDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "QuestIA.Core.Models.QuizDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "QuestIA.App.Controller.ControllerBase\u00603[[QuestIA.Core.Models.User, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[QuestIA.Core.Models.DTOs.UserDTO, QuestIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
     "Method": "GetAllAsync",
     "RelativePath": "api/User",
