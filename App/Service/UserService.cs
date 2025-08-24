@@ -19,6 +19,11 @@ namespace QuestIA.App.Service
             return await _userRepository.FirstOrDefaultAsync(u => u.Email == email);
         }
 
+        public override async Task<User> GetByIdAsync(Guid id, Guid userId)
+        {
+            return await _userRepository.FirstOrDefaultAsync(u => u.Id == id);
+        }
+
         public async Task<bool> EmailExistsAsync(string email)
         {
             var user = await _userRepository.FirstOrDefaultAsync(u => u.Email == email);

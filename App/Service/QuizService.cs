@@ -52,7 +52,7 @@ namespace QuestIA.App.Service
             }
 
             quiz.TimesTaken = quizDto.TimesTaken;
-            quiz.Score = quizDto.Score;
+            quiz.Score = quizDto.Score ?? 0;
             quiz.LastAttempt = DateTime.UtcNow;
             quiz.TimeSpent = quizDto.TimeSpent;
 

@@ -16,7 +16,7 @@ namespace QuestIA.Core.Models
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string? Description { get; set; } = string.Empty;
-        public double? Score { get; set; }
+        public double Score { get; set; } = 0;
         public int? TimeLimit { get; set; }
         public int? TimesTaken { get; set; }
         public int? QuantityQuestions { get; set; }

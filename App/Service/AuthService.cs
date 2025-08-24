@@ -94,12 +94,10 @@ namespace QuestIA.App.Service
             }
 
             var user = await _userService.GetByIdAsync(userId, userId);
-            
-            // Revoga o refresh token atual
+
             refreshToken.IsRevoked = true;
             await UpdateRefreshTokenAsync(refreshToken);
 
-            // Gera novos tokens
             var newToken = GenerateJwtToken(user);
             var newRefreshToken = await GenerateRefreshTokenAsync(user.Id);
 

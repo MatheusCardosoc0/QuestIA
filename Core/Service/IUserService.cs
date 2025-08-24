@@ -6,5 +6,7 @@ namespace QuestIA.Core.Service
     {
         Task<User> GetByEmailAsync(string email);
         Task<bool> EmailExistsAsync(string email);
+
+        Task<User> GetByIdAsync(Guid id, Guid userId);
     }
 }

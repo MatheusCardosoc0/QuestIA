@@ -62,11 +62,11 @@ namespace QuestIA.App.Controller
             }
             catch (UnauthorizedAccessException ex)
             {
-                return Unauthorized(new { message = ex.Message });
+                return Unauthorized(new { message = ex.ToString() });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Erro interno do servidor", error = ex.Message });
+                return StatusCode(500, new { message = "Erro interno do servidor", error = ex.ToString() });
             }
         }
 
