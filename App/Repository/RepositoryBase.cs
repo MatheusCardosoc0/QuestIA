@@ -8,10 +8,10 @@ namespace QuestIA.App.Repository
 {
     public class RepositoryBase<T, TKey> : IRepositoryBase<T, TKey> where T : class, IEntity<TKey>
     {
-        protected readonly QuestIAContext _context;
+        protected readonly QuizIAContext _context;
         protected readonly DbSet<T> _dbSet;
 
-        public RepositoryBase(QuestIAContext context)
+        public RepositoryBase(QuizIAContext context)
         {
             _context = context;
             _dbSet = context.Set<T>();

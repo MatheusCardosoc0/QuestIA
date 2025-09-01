@@ -26,7 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("QuestIAConnection");
-builder.Services.AddDbContext<QuestIAContext>(options =>
+builder.Services.AddDbContext<QuizIAContext>(options =>
     options.UseNpgsql(connectionString));
 
 // Configuração do JWT
@@ -67,6 +67,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IQuizRepository, QuizRepository>();
 builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddScoped<IOptionRepository, OptionRepository>();
+builder.Services.AddScoped<IAttemptRepository, AttemptRepository>();
 
 // Configuração dos Serviços
 builder.Services.AddScoped<IUserService, UserService>();
@@ -74,6 +75,7 @@ builder.Services.AddScoped<IQuizService, QuizService>();
 builder.Services.AddScoped<IQuestionService, QuestionService>();
 builder.Services.AddScoped<IOptionService, OptionService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAttemptService, AttemptService>();
 
 builder.Services.AddCors(options =>
 {

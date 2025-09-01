@@ -12,7 +12,7 @@ using QuestIA.Infra.Database;
 
 namespace QuestIA.Migrations
 {
-    [DbContext(typeof(QuestIAContext))]
+    [DbContext(typeof(QuizIAContext))]
     [Migration("20250713221309_ImprovementSubjectTable")]
     partial class ImprovementSubjectTable
     {

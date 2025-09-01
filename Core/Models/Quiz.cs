@@ -35,5 +35,7 @@ namespace QuestIA.Core.Models
         public User User { get; set; }
         public DateTime? Created { get; set; } = DateTime.UtcNow;
         public DateTime? LastAttempt { get; set; }
+
+        public List<Attempt> Attempts { get; set; }
     }
 }

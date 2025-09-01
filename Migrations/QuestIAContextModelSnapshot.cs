@@ -11,7 +11,7 @@ using QuestIA.Infra.Database;
 
 namespace QuestIA.Migrations
 {
-    [DbContext(typeof(QuestIAContext))]
+    [DbContext(typeof(QuizIAContext))]
     partial class QuestIAContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

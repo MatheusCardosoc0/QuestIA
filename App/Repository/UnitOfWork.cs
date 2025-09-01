@@ -11,11 +11,11 @@ namespace QuestIA.App.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly QuestIAContext _context;
+        private readonly QuizIAContext _context;
         private IDbContextTransaction _transaction;
         private readonly ConcurrentDictionary<Type, object> _repositories = new();
 
-        public UnitOfWork(QuestIAContext context)
+        public UnitOfWork(QuizIAContext context)
         {
             _context = context;
         }
@@ -32,7 +32,6 @@ namespace QuestIA.App.Repository
 
             object instance;
 
-            // repos específicos
             if (type == typeof(User))
                 instance = new UserRepository(_context);
             else if (type == typeof(RefreshToken))
@@ -43,7 +42,6 @@ namespace QuestIA.App.Repository
                 instance = new QuestionRepository(_context);
             else
             {
-                // fallback para o genérico
                 var repoType = typeof(RepositoryBase<,>).MakeGenericType(type, typeof(TKey));
                 instance = Activator.CreateInstance(repoType, _context)!;
             }
@@ -52,14 +50,14 @@ namespace QuestIA.App.Repository
             return (IRepositoryBase<T, TKey>)instance;
         }
 
-        // propriedades de acesso
         public IUserRepository Users => (IUserRepository)Repository<User, Guid>();
         public IRefreshTokenRepository RefreshToken => (IRefreshTokenRepository)Repository<RefreshToken, Guid>();
         public IQuizRepository Quizzes => (IQuizRepository)Repository<Quiz, Guid>();
         public IQuestionRepository Questions => (IQuestionRepository)Repository<Question, int>();
         public IOptionRepository Options => (IOptionRepository)Repository<Option, int>();
+        public IUserResponseQuestionRepository UserResponseQuestions => (IUserResponseQuestionRepository)Repository<UserResponseQuestion, int>();
+        public IAttemptRepository Attempts => (IAttemptRepository)Repository<Attempt, Guid>();
 
-        // transações
         public async Task BeginTransactionAsync()
             => _transaction = await _context.Database.BeginTransactionAsync();
 

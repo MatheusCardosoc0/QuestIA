@@ -1,4 +1,5 @@
 using QuestIA.Core.Models;
+using QuestIA.Core.Models.DTOs;
 
 namespace QuestIA.Core.Service
 {

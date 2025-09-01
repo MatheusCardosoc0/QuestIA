@@ -1,6 +1,7 @@
+using QuestIA.Core.Models; // para DifficultyLevel e QuestTypes
+using QuestIA.Core.Models.DTOs;
 using System;
 using System.Collections.Generic;
-using QuestIA.Core.Models; // para DifficultyLevel e QuestTypes
 
 namespace QuestIA.Core.Models
 {
@@ -21,5 +22,8 @@ namespace QuestIA.Core.Models
         public QuestionTypes? QuestionTypes { get; set; }
         public List<string>? Tags { get; set; }
         public Guid? UserId { get; set; }
+
+        public AttemptDTO? AttemptDto { get; set; }
+
     }
 }

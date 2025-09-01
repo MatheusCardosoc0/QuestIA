@@ -12,7 +12,7 @@ using QuestIA.Infra.Database;
 
 namespace QuestIA.Migrations
 {
-    [DbContext(typeof(QuestIAContext))]
+    [DbContext(typeof(QuizIAContext))]
     [Migration("20250803141506_Correcting nomenclature of tables")]
     partial class Correctingnomenclatureoftables
     {

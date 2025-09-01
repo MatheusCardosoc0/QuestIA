@@ -6,7 +6,7 @@ namespace QuestIA.App.Repository
 {
     public class QuizRepository : RepositoryBase<Quiz, Guid>, IQuizRepository
     {
-        public QuizRepository(QuestIAContext context) : base(context)
+        public QuizRepository(QuizIAContext context) : base(context)
         {
         }
 

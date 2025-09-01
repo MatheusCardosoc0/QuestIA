@@ -11,7 +11,7 @@ using QuestIA.Infra.Database;
 
 namespace QuestIA.Migrations
 {
-    [DbContext(typeof(QuestIAContext))]
+    [DbContext(typeof(QuizIAContext))]
     [Migration("20250705155536_First")]
     partial class First
     {

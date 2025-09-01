@@ -7,7 +7,7 @@ namespace QuestIA.App.Repository
 {
     public class OptionRepository : RepositoryBase<Option, int>, IOptionRepository
     {
-        public OptionRepository(QuestIAContext context) : base(context)
+        public OptionRepository(QuizIAContext context) : base(context)
         {
         }
 

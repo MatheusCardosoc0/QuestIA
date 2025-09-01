@@ -1,4 +1,5 @@
 using QuestIA.Core.Models;
+using QuestIA.Core.Models.DTOs;
 using QuestIA.Core.Repository;
 using QuestIA.Core.Service;
 
@@ -57,6 +58,17 @@ namespace QuestIA.App.Service
             quiz.TimeSpent = quizDto.TimeSpent;
 
             await _quizRepository.UpdateAsync(quiz);
+
+            var newAttempt = new Attempt
+            {
+                QuizId = quiz.Id,
+                UserId = quiz.UserId,
+                UserResponseQuestions = quizDto.AttemptDto.UserResponseQuestions,
+            };
+
+            await _unitOfWork.Attempts.CreateAsync(newAttempt);
+
+            
 
             return quiz;
         }

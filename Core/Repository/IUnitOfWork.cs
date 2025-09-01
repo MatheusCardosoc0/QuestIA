@@ -12,6 +12,9 @@ namespace QuestIA.Core.Repository
         IQuestionRepository   Questions { get; }
         IOptionRepository  Options { get; }
 
+        IUserResponseQuestionRepository UserResponseQuestions { get; }
+        IAttemptRepository Attempts { get; }
+
         Task<int>   SaveChangesAsync();
         Task        BeginTransactionAsync();
         Task        CommitTransactionAsync();

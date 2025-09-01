@@ -7,7 +7,7 @@ namespace QuestIA.App.Repository
 {
     public class RefreshTokenRepository : RepositoryBase<RefreshToken, Guid>, IRefreshTokenRepository
     {
-        public RefreshTokenRepository(QuestIAContext context) : base(context)
+        public RefreshTokenRepository(QuizIAContext context) : base(context)
         {
         }
     }
